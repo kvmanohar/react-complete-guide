@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import cssStyles from './App.module.css';
 import Person from './Person/Person.jsx';
 
 class App extends Component {
@@ -68,15 +68,15 @@ class App extends Component {
 
 		const classes = [];
 		if (this.state.persons.length <= 2) {
-			classes.push('red'); //push 'red' styling class to classes
+			classes.push(cssStyles.red); //push 'red' styling class to classes
 		}
 
 		if (this.state.persons.length <= 1) {
-			classes.push('bold');
+			classes.push(cssStyles.bold);
 		}
 
 		return (
-			<div className="App">
+			<div className={cssStyles.App}>
 				<h1>Hi, I'am a React App</h1>
 				<p className={classes.join(' ')}>this is really working !!!</p>
 				<button style={buttonStyle} onClick={this.tooglePersonsHandler}>
@@ -88,4 +88,4 @@ class App extends Component {
 	}
 }
 
-export default Radium(App);
+export default App;
